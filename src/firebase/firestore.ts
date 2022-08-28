@@ -44,7 +44,7 @@ const listenUserUpdate = async (user: User, callback: (userData: AppUser) => any
     const ref = userRef(user.uid);
     unsubscribe = onSnapshot(ref, (document) => {
         const data = document.data();
-        if (data) data.DOB = (data.DOB as Timestamp).toDate();
+        if (data && data.DOB) data.DOB = (data.DOB as Timestamp).toDate();
         callback(data as AppUser);
     });
 }
