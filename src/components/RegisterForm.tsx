@@ -55,7 +55,7 @@ const onSubmit = async (values: FormValues) => {
     const user = await registerWithEmailAndPassword(values.email, values.password);
     if (user) {
       if (user.email) setUserEmail(user, user.email);
-      if (user.displayName) setUserName(user, user.displayName);
+      if (user.displayName) setUserName(user, values.name);
     }
     showNotification({ message: "Successfully registered!", color: "green" });
   } catch(e) {

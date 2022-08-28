@@ -89,7 +89,7 @@ const PhotoInput = ({ user }: InputPropType) => {
       () => {},
       (error) => {console.log(error)},
       (photoURL) => {
-        setUploading(true);
+        setUploading(false);
         showNotification({ message: "Upload successful!", color: "green"});
         wrapWithNotification(setUserPhotoURL(user as User, photoURL));
       }
